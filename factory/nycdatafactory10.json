@@ -1,0 +1,9 @@
+{
+	"name": "nycdatafactory10",
+	"location": "westus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8f2ce2d8-dad6-4430-9da9-9ff0821bc3cc",
+		"tenantId": "f958e84a-92b8-439f-a62d-4f45996b6d07"
+	}
+}
