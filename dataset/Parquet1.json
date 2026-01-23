@@ -1,25 +1,20 @@
 {
-	"name": "ds_dirstaging",
+	"name": "Parquet1",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "ls_data_lake_gen2",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Parquet",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": "dirstaging",
 				"fileSystem": "adlsnycpayroll-akshitha-b"
 			},
-			"columnDelimiter": ",",
-			"compressionCodec": "snappy",
-			"escapeChar": "\\",
-			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"compressionCodec": "snappy"
 		},
 		"schema": []
-	},
-	"type": "Microsoft.DataFactory/factories/datasets"
+	}
 }

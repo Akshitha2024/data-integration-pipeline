@@ -22,10 +22,14 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_sql_summary",
+						"referenceName": "Parquet1",
 						"type": "DatasetReference"
 					},
-					"name": "sink1"
+					"name": "datatodsstaging",
+					"rejectedDataLinkedService": {
+						"referenceName": "ls_data_lake_gen2",
+						"type": "LinkedServiceReference"
+					}
 				},
 				{
 					"dataset": {
@@ -109,19 +113,12 @@
 				"     TotalOTPaid = sum(TotalOTPaid)) ~> aggregate1",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     input(",
-				"          FiscalYear as integer,",
-				"          AgencyName as string,",
-				"          TotalPaid as double",
-				"     ),",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink1",
+				"     skipDuplicateMapOutputs: true) ~> datatodsstaging",
 				"aggregate1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     truncate: true,",
