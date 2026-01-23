@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "nycdatafactory10"
+		},
+		"ls_data_lake_gen2_accountKey": {
+			"value": ""
+		},
+		"ls_sqldb_nycpayroll_password": {
+			"value": ""
+		},
+		"ls_data_lake_gen2_properties_typeProperties_url": {
+			"value": "https://nycstorageaccount10.dfs.core.windows.net/"
+		},
+		"ls_sqldb_nycpayroll_properties_typeProperties_server": {
+			"value": "nyc10.database.windows.net"
+		},
+		"ls_sqldb_nycpayroll_properties_typeProperties_database": {
+			"value": "db_nycpayroll"
+		},
+		"ls_sqldb_nycpayroll_properties_typeProperties_userName": {
+			"value": "nycserveradmin"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
